@@ -1,0 +1,377 @@
+*{margin: 0px;padding: 0px}
+#container{
+    width: 100%;
+}
+.header{
+    width: 100%;
+    height: 140px;
+
+}
+.nav{
+    width: 100%;
+    height: 543px;
+    background: #F2F2F2;
+    margin-top: 45px;
+    border-top: 1px solid #F2F2F2;
+}
+.caro{
+    width: 100%;
+    background: #F8F8F8;
+    height: 2150px;
+   /* background: red;*/
+}
+.foot{
+    width: 100%;
+    height: 110px;
+    background: #333333;
+}
+.header>.header1{
+    width: 100%;
+    height: 35px;
+    border-bottom: 1px solid #cccccc;
+}
+.header>.header2{
+    width: 100%;
+    height: 120px;
+
+}
+.header>.header1>.header11>ul{
+    /*height: 100%;*/
+    list-style: none;
+    margin-left: 160px;
+
+}
+.header>.header1>.header11>ul>li{
+    float: left;
+    margin-left: 10px;
+    line-height: 35px;
+    font-size: 13px;
+    height: 35px;
+   /* height: 100%;*/
+}
+.header>.header1>.header12>ul{
+    list-style: none;
+    margin-left: 50px;
+}
+.header>.header1>.header12>ul>li{
+    float: left;
+    margin-left: 10px;
+    line-height: 35px;
+    font-size: 13px;
+}
+.header21>div{
+    margin-top: 15px;
+}
+.header21>div>a>.logo1{
+    width: 140px;
+    margin-left: 150px;
+}
+.header21>div>a>.logo2{
+    width: 120px;
+}
+.header22>div{
+    margin-top: 30px;
+    margin-left: -20px;
+}
+.header22>div>input{
+    width: 450px;
+    height: 42px;
+    outline: none;
+    border: 2px solid #E73A44;
+}
+
+.header22Dropdown{
+    width: 450px;
+    background: #FFFFFF;
+    position: absolute;
+    z-index: 5;
+    border: 2px solid #E73A44;
+    margin: -35px 0 0 502px;
+}
+.header22Dropdown>ul li:hover{
+    background: #F1F3F4;
+    cursor: pointer;
+}
+
+.showIndexLogin{
+    width: 200px;
+    height: 60px;
+    background: #ffffff;
+    position: absolute;
+    z-index: 5;
+    margin-top: 35px;
+    margin-left: 374px;
+    border: 1px solid #cccccc;
+}
+
+.showIndexLogin>ul{
+    list-style: none;
+    margin-top: 20px;
+}
+.showIndexLogin>ul>li{
+    float: left;
+    margin-left: 25px;
+}
+.showIndexLogin>ul>li:hover{
+   cursor: pointer;
+}
+.showIndexLogin>ul>li>a:hover{
+    color: #FF7C00;
+}
+
+.showNavli01,.showNavli02,.showNavli03,.showNavli04,.showNavli05{
+    width: 1000px;
+    height: 520px;
+    background: #fff;
+    position: absolute;
+    z-index: 10;
+    margin-top: 206px;
+    margin-left: 359px;
+    border:1px solid #FF7C00;
+}
+
+
+.showNavli01>div>div>ul{
+    list-style: none;
+}
+.showNavli01>div>div>ul>li{
+    float: left;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+.showNavli01>div>div>ul>li:hover{
+    color: #FF7C00;
+    cursor: pointer;
+}
+.header22>div>button{
+    width: 90px;
+    height: 42px;
+    margin-left: -5px;
+    outline: none;
+    cursor: pointer;
+    border: 2px solid #E73A44;
+    background: #E73A44;
+    color: #ffffff;
+}
+
+.header23>div{
+    margin-left: -35px;
+    margin-top: 35px;
+}
+.header23>div>span{
+    font-size: 25px;
+}
+.nav>.nav1{
+    width: 76%;
+    height: 300px;
+   /* margin: 0 auto;*/
+    margin-top: -50px;
+    margin-left: 160px;
+}
+.nav1>div>ul>li{
+    font-size: 17px;
+}
+.nav1>div>ul>li:hover{
+    color: #E73A44;
+}
+.nav1>div>div>div{
+    height: 520px;
+    width: 1200px;
+    margin-left: -10px;
+}
+.nav1>div>div>div>.nav111{
+    width: 200px;
+    height: 100%;
+    background: #E73A44;
+}
+.nav1>div>div>div>.nav111>ul{
+    list-style: none;
+    width: 200px;
+    margin-left: -15px;
+}
+.nav1>div>div>div>.nav111>ul>li{
+    height: 20px;
+    width: 100%;
+    color: #ffffff;
+    font-size: 13px;
+    margin-top: 9px;
+    padding-left: 15px;
+}
+.nav1>div>div>div>.nav111>ul>li:hover{
+    background: #FF7C00;
+    cursor: pointer;
+}
+.nav1>div>div>div>.nav111>ul>li>span{
+    float: right;
+    font-size: 15px;
+    margin-right: 15px;
+}
+.nav112{
+    margin-left: -5px;
+}
+.nav1>div>div>div>div>.nav112>div>div{
+    width: 710px;
+    height: 300px
+}
+.nav1>div>div>div>div>.nav113{
+    background: #ffffff;
+    width: 710px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.nav1>div>div>div>div>.nav113>div{
+    height: 200px;
+}
+.nav114>div{
+    margin-left: -55px;
+}
+.nav114>div>img{
+    width: 240px;
+    height: 150px;
+}
+.nav1141{
+    width: 240px;
+    height: 200px;
+    background: #ffffff;
+    margin-top: 20px;
+}
+.nav1141>#nav1141{
+    width: 100%;
+    height: 50px;
+    padding-top: 20px;
+}
+.nav1141>#nav1141>b{
+    margin-left: 10px;
+    font-size: 15px;
+}
+.nav1141>#nav1142>ul{
+    list-style: none;
+    margin-left: 12px;
+    font-size: 11px;
+}
+.nav1141>#nav1142>ul>li{
+    margin-top: 10px;
+}
+.nav1141>#nav1142>ul>li:hover{
+    cursor: pointer;
+    color: #FF7C00;
+}
+
+.caro>.caro1{
+    width: 100%;
+    height: 100px;
+    padding-top: 50px;
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: center;
+}
+.caro>.caro1>.span1{
+    margin-right: 30px;
+    font-size: 18px;
+    color: red;
+}
+.caro>.caro1>.span2{
+    margin-left: 30px;
+    font-size: 18px;
+    color: red;
+}
+.caro>.caro2{
+    width: 79%;
+    height: 1800px;
+   /* background: #0000FF;*/
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.caro>.caro2>.caro21{
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+    /*background: green;*/
+}
+.caro>.caro2>.caro21>div{
+    width: 228px;
+    height: 370px;
+    background: #ffffff;
+    float: left;
+    margin-left: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.caro>.caro2>.caro21>div:hover{
+    border: 3px solid #F2F2F2;
+    opacity: 0.8;
+}
+
+.caro>.caro2>.caro21>div>div>img{
+    width: 100%;
+    height: 230px;
+}
+
+.caro>.caro2>.caro21>div>.caro2111{
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.caro>.caro2>.caro21>div>.caro2111:hover{
+    color: red;
+}
+.caro>.caro2>.caro21>div>.caro2112,.caro2113{
+    margin-left: 15px;
+    margin-top: 2px
+}
+.caro>.caro2>.caro21>div>.caro2112>span{
+    font-size: 20px;
+}
+.caro>.caro2>.caro21>div>.caro2112:hover{
+    color: red;
+}
+.caro>.caro3{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 15px;
+}
+.caro>.caro3>.caro31{
+    width: 15%;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 180px;
+}
+.caro>.caro3>.caro31>table{
+    margin-top: 150px;
+    margin: 0 auto;
+}
+
+.foot>.foot1{
+    width: 100%;
+    height: 30px;
+    margin: 0 auto;
+
+}
+.foot>.foot2{
+    width: 100%;
+    height: 50px;
+    margin-top: 30px;
+}
+.foot>.foot1>ul{
+    list-style: none;
+    margin:0 auto;
+    padding-top: 35px;
+    padding-left: 350px;
+}
+.foot>.foot1>ul li{
+    float: left;
+    margin-left: 10px;
+    color: #997D5B;
+}
+.foot>.foot2>ul{
+    list-style: none;
+    padding-left: 150px;
+}
+.foot>.foot2>ul li{
+    float: left;
+    margin-left: 10px;
+    color: #997D5B;
+}
+
+
+
+

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tjetc.mapper.ProductMapper">
+
+<insert id="add" parameterType="product">
+    insert into product (name,price,count,photopath,briefly,details,type) values (#{name},#{price},#{count},#{photopath},#{briefly},#{details},#{type})
+</insert>
+<select id="listByName" parameterType="string" resultType="product">
+    select * from product where name like concat('%',#{name},'%')
+</select>
+
+<select id="selectOrderByReasonsRefund" resultType="order">
+    select * from orders where state='已支付' and order_status != '已收货' and reasonsRefund != 'null' and cargoStatus != 'null';
+</select>
+
+<select id="findMapList" parameterType="map" resultType="product">
+    select * from product
+</select>
+
+<select id="selectByProductJSON" resultType="product">
+    select * from product
+</select>
+    <!--<select id="" resultType="" parameterType="">
+        select * from thirdpay_settle_rule
+        <where>
+            <if test="settle_rule_name!=null and settle_rule_name!=''">
+                and settle_rule_name=#{settle_rule_name}
+            </if>
+            <if test="sp_code!=null and sp_code!=''">
+                and sp_code=#{sp_code}
+            </if>
+            <if test="srv_type_code!=null and srv_type_code!=''">
+                and srv_type_code=#{srv_type_code}
+            </if>
+            <if test="srv_type_code!=null and settle_rule_name!=''">
+                and svr_code=#{svr_code}
+            </if> and approval_status = "0111"
+        </where>
+    </select>-->
+</mapper>

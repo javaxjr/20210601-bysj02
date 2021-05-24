@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tjetc.mapper.AdminMapper">
+
+    <insert id="addAdmin" parameterType="admin">
+        insert into admin(name,username,password,age,sex,phone) values (#{name},#{username},#{password},#{age},#{sex},#{phone})
+    </insert>
+
+    <select id="listByName" parameterType="string" resultType="admin">
+        select * from admin where name like concat('%',#{name},'%')
+    </select>
+
+</mapper>

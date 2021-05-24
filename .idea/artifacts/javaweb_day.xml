@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="javaweb_day">
+    <output-path>$PROJECT_DIR$/out/artifacts/javaweb_day</output-path>
+    <root id="archive" name="javaweb_day.war">
+      <element id="artifact" artifact-name="bysj_war" />
+    </root>
+  </artifact>
+</component>
