@@ -60,6 +60,11 @@
         <url-pattern>/GetQrCodeServlet</url-pattern>
     </servlet-mapping>
 
+    <context-param>
+        <param-name>ContextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
+
     <servlet>
         <description>手机扫描二维码之后进行登录</description>
         <display-name>PhoneLoginServlet</display-name>

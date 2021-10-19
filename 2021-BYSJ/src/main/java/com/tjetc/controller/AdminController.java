@@ -2,12 +2,12 @@ package com.tjetc.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.tjetc.domain.Admin;
-import com.tjetc.domain.Product;
 import com.tjetc.service.AdminService;
 import com.tjetc.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -27,6 +27,10 @@ public class AdminController {
     public String add(Admin admin){
         System.out.println("admin = " + admin);
         admin.setPermission("IDENTITY");
+
+        if (!StringUtils.isEmpty(admin.getPassword())){
+
+        }
         //int i=adminService.addAdmin(admin);
         Map<String,Object> map = new HashMap<>();
         map.put("admin",admin);

@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: org.apache.poi:poi-ooxml-schemas:3.8">
     <CLASSES>
-      <root url="jar://C:/JDBC-Bao/apache-maven-3.6.1/conf/org/apache/poi/poi-ooxml-schemas/3.8/poi-ooxml-schemas-3.8.jar!/" />
+      <root url="jar://D:/JDBC-Bao/apache-maven-3.6.1/conf/.m2/repositoty/org/apache/poi/poi-ooxml-schemas/3.8/poi-ooxml-schemas-3.8.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://C:/JDBC-Bao/apache-maven-3.6.1/conf/org/apache/poi/poi-ooxml-schemas/3.8/poi-ooxml-schemas-3.8-javadoc.jar!/" />
+      <root url="jar://D:/JDBC-Bao/apache-maven-3.6.1/conf/.m2/repositoty/org/apache/poi/poi-ooxml-schemas/3.8/poi-ooxml-schemas-3.8-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://C:/JDBC-Bao/apache-maven-3.6.1/conf/org/apache/poi/poi-ooxml-schemas/3.8/poi-ooxml-schemas-3.8-sources.jar!/" />
+      <root url="jar://D:/JDBC-Bao/apache-maven-3.6.1/conf/.m2/repositoty/org/apache/poi/poi-ooxml-schemas/3.8/poi-ooxml-schemas-3.8-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

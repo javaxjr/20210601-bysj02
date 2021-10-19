@@ -1,5 +1,7 @@
 package com.tjetc.demo.genericParadigm;
 
+import com.tjetc.domain.Admin;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +31,19 @@ public class GenericesTest<T> {
         genericesTest.add(t2);
         System.out.println(genericesTest.list.get(0));
         System.out.println(genericesTest.list.get(1));
+
+        /*try {
+            Class<?> admin = Class.forName("Admin");
+            Admin instance = (Admin) admin.newInstance();
+            System.out.println("admin = " + admin);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }*/
+
     }
 
 }

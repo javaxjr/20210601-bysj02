@@ -3,14 +3,16 @@ package com.tjetc.util;
 
 import com.tjetc.domain.Product;
 import org.apache.poi.hssf.usermodel.*;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.util.StringUtils;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
@@ -71,6 +73,106 @@ public class ExcelUtils {
     }
 
     //下载数据库信息生成Excel表格
+    //表格布局
+    public static HSSFWorkbook productExcel(List<Product> list,String[] fields){
+        //1.创建一个webbook, 对应一个Excel文件
+        HSSFWorkbook wb = new HSSFWorkbook();
+        // 第二步，在webbook中添加一个sheet,对应Excel文件中的sheet
+        HSSFSheet sheet = wb.createSheet("商品信息表");
+        //第三部，在sheet中添加表头0行，注意老版本POI对Excel的行列数有限制short
+        HSSFRow row = sheet.createRow((int)0);
+        //第四步：创建单元格，并设置值表头，设置表头居中
+        HSSFCellStyle style = wb.createCellStyle();
+
+        //设置背景色
+        /*style.setFillBackgroundColor(HSSFColor.LIGHT_TURQUOISE.index);
+        style.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);*/
+
+        //设置边框居中
+        style.setBorderBottom(HSSFCellStyle.BORDER_THIN);
+        style.setBorderLeft(HSSFCellStyle.BORDER_THIN);
+        style.setBorderRight(HSSFCellStyle.BORDER_THIN);
+        style.setBorderTop(HSSFCellStyle.BORDER_THIN);
+        style.setAlignment(HSSFCellStyle.ALIGN_CENTER);
+
+        //设置字体
+        HSSFFont font = wb.createFont();
+        font.setFontName("仿宋_GB2312");
+        font.setColor(HSSFColor.OLIVE_GREEN.index);
+        font.setFontHeightInPoints((short) 18);
+        font.setBoldweight(HSSFFont.BOLDWEIGHT_BOLD);
+
+        //把字体应用到当前的样式
+        style.setFont(font);
+
+        // 生成一个样式
+        CellStyle style1 = wb.createCellStyle();
+        // 设置背景色
+        style1.setFillForegroundColor(HSSFColor.GREY_25_PERCENT.index);
+        style1.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);
+
+        //设置边框
+        style1.setBorderBottom(HSSFCellStyle.BORDER_THIN);
+        style1.setBorderLeft(HSSFCellStyle.BORDER_THIN);
+        style1.setBorderRight(HSSFCellStyle.BORDER_THIN);
+        style1.setBorderTop(HSSFCellStyle.BORDER_THIN);
+        style1.setAlignment(HSSFCellStyle.ALIGN_CENTER);
+
+
+        // 设置字体
+        Font font1 = wb.createFont();
+        font1.setFontName("仿宋_GB2312");
+        font1.setColor(HSSFColor.OLIVE_GREEN.index);
+        font1.setFontHeightInPoints((short) 14);
+        font1.setBoldweight(HSSFFont.BOLDWEIGHT_BOLD);
+        // 把字体应用到当前的样式
+        style1.setFont(font1);
+        sheet.setColumnWidth(0, 5000);
+        sheet.setColumnWidth(1, 5000);
+        sheet.setColumnWidth(2, 5000);
+        sheet.setColumnWidth(3, 5000);
+
+
+        //生成标题行
+        Row row2 = sheet.createRow(1);
+        Cell cell;
+        for (int k = 0;k<fields.length;k++){
+            cell = row2.createCell(k);
+            cell.setCellValue(fields[k]);
+            cell.setCellStyle(style1);
+        }
+
+        if (list == null || list.size() == 0) {
+            return wb;
+        }
+
+        Row row3;
+        Cell cell1;
+        int contentIndex = 2;
+        int count = 0;
+        for (int i = 0;i<list.size()-1;i++){
+            Product bean = list.get(i);
+            row3 = sheet.createRow(contentIndex+i+count);
+
+            cell1 = row3.createCell(0);
+            cell1.setCellValue(bean.getId());
+            cell1.setCellStyle(style);
+
+            cell1 = row3.createCell(1);
+            cell1.setCellValue(bean.getName());
+            cell1.setCellStyle(style);
+
+            cell1 = row3.createCell(2);
+            cell1.setCellValue(bean.getType());
+            cell1.setCellStyle(style);
+
+            cell1 = row3.createCell(3);
+            cell1.setCellValue(bean.getPhotopath());
+            cell1.setCellStyle(style);
+
+        }
+        return wb;
+    }
 
 
 

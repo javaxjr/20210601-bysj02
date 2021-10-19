@@ -16,11 +16,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import sun.misc.BASE64Encoder;
+//import sun.misc.BASE64Encoder;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -38,8 +39,23 @@ public class ProductController {
 
 
 
-    @GetMapping("/add")
-    public String add(){
+    @PostMapping("/midrecvoineinfo")
+    public String add(HttpServletRequest request){
+
+        try {
+            BufferedReader reader = request.getReader();
+            String str = "";
+            String listString = "";
+            while ((str = reader.readLine())!=null){
+                listString += str;
+            }
+
+            JSONObject jsonObject = JSON.parseObject(listString);
+            System.out.println("jsonObject = " + jsonObject);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         return "product/productAdd";
     }
 
@@ -85,6 +101,7 @@ public class ProductController {
 
         List<Product> list = productService.selectByProductJSON();
 
+
         String json="";
         for (Product product : list) {
             ObjectMapper mapper = new ObjectMapper();
@@ -122,8 +139,8 @@ public class ProductController {
             String newFileName = res+filename.substring(filename.lastIndexOf("."));
 
             //转换成为base64
-            BASE64Encoder base64Encoder = new BASE64Encoder();
-            String base64EncoderImg = preffix+base64Encoder.encode(file.getBytes());
+            //BASE64Encoder base64Encoder = new BASE64Encoder();
+            //String base64EncoderImg = preffix+base64Encoder.encode(file.getBytes());
             //返回结果
             String url=newFileName;
 
