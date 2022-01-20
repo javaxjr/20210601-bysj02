@@ -4,8 +4,6 @@ package com.tjetc.demo.domain;
 public class Bird extends Animal{
     private double flySpeed;
 
-
-
     public void setFlySpeed(double flySpeed) {
         this.flySpeed = flySpeed;
     }
