@@ -7,13 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="2021-BYSJ" />
         <module name="sftp" />
         <module name="demo" />
-        <module name="2021-BYSJ" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
-      <module name="2021-BYSJ" target="7" />
+      <module name="2021-BYSJ" target="1.8" />
       <module name="demo" target="1.8" />
       <module name="sftp" target="1.8" />
     </bytecodeTargetLevel>
