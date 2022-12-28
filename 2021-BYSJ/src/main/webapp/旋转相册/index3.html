@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+
+    <title>旋转立方体相册</title>
+    <style type="text/css">
+        <pre name="code" class="css">*{
+                                        padding:0;
+                                        margin:0;
+                                    }
+        body{
+            width:100%;
+            height:100%;
+
+        }
+        #react{
+            width: 200px;
+            height:200px;
+            margin: 200px auto;
+            transform-style:preserve-3d;
+            animation:rotate 20s infinite;
+            animation-timing-function: linear;
+        }
+        #react div{
+            position:absolute;
+            transition: all .4s;
+        }
+        div .out_pic{
+            width:200px;
+            height:200px;
+            opacity:0.9;
+        }
+        div .in_pic{
+            width:150px;
+            height:150px;
+        }
+        #react span{
+            display:block;
+            position:absolute;
+            width:100px;
+            height:100px;
+            top:50px;
+            left:50px;
+        }
+        @keyframes rotate{
+            from{transform: rotateX(0deg) rotateY(0deg);}
+            to{transform: rotateX(360deg) rotateY(360deg);}
+        }
+
+
+        .out_front{
+            transform:translateZ(100px);
+        }
+        .out_back{
+            transform:translateZ(-100px);
+        }
+        .out_left{
+            transform:rotateY(90deg) translateZ(100px);
+        }
+        .out_right{
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .out_top{
+            transform:rotateX(90deg) translateZ(100px);
+        }
+        .out_bottom{
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        .in_front{
+            transform:translateZ(100px);
+        }
+        .in_back{
+            transform:translateZ(-100px);
+        }
+        .in_left{
+            transform:rotateY(90deg) translateZ(100px);
+        }
+        .in_right{
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .in_top{
+            transform:rotateX(90deg) translateZ(100px);
+        }
+        .in_bottom{
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+        /*外面的图片散开*/
+        #react:hover .out_front{
+            transform:translateZ(400px);
+        }
+        #react:hover .out_back{
+            transform:translateZ(-400px);
+        }
+        #react:hover .out_left{
+            transform:rotateY(90deg) translateZ(400px);
+        }
+        #react:hover .out_right{
+            transform: rotateY(-90deg) translateZ(400px);
+        }
+        #react:hover .out_top{
+            transform:rotateX(90deg) translateZ(400px);
+        }
+        #react:hover .out_bottom{
+            transform: rotateX(-90deg) translateZ(400px);
+        }
+
+
+        /*里面的图片散开*/
+        #react:hover .in_front{
+            transform:translateZ(200px);
+        }
+        #react:hover .in_back{
+            transform:translateZ(-200px);
+        }
+        #react:hover .in_left{
+            transform:rotateY(90deg) translateZ(200px);
+        }
+        #react:hover .in_right{
+            transform: rotateY(-90deg) translateZ(200px);
+        }
+        #react:hover .in_top{
+            transform:rotateX(90deg) translateZ(200px);
+        }
+        #react:hover .in_bottom{
+            transform: rotateX(-90deg) translateZ(200px);
+        }
+
+        @charset "utf-8";
+        /* CSS Document */
+
+    </style>
+</head>
+<body>
+<div id="react">
+    <div class="out_front">
+        <img src="../旋转相册/img/1.JPG" class="out_pic">
+    </div>
+    <div class="out_back">
+        <img src="../旋转相册/img/2.JPG" class="out_pic">
+    </div>
+    <div class="out_left">
+        <img src="../旋转相册/img/3.JPG" class="out_pic">
+    </div>
+    <div class="out_right">
+        <img src="../旋转相册/img/4.JPG" class="out_pic">
+    </div>
+    <div class="out_top">
+        <img src="../旋转相册/img/5.JPG" class="out_pic">
+    </div>
+    <div class="out_bottom">
+        <img src="../旋转相册/img/6.JPG" class="out_pic">
+    </div>
+    <span class="in_front">
+        <img src="../旋转相册/img/7.JPG" class="in_pic">
+    </span>
+    <span class="in_back">
+        <img src="../旋转相册/img/8.JPG" class="in_pic">
+    </span>
+    <span class="in_left">
+        <img src="../旋转相册/img/9.JPG" class="in_pic">
+    </span>
+    <span class="in_right">
+        <img src="../旋转相册/img/10.JPG" class="in_pic">
+    </span>
+    <span class="in_top">
+        <img src="../旋转相册/img/11.JPG" class="in_pic">
+    </span>
+    <span class="in_bottom">
+        <img src="../旋转相册/img/12.JPG" class="in_pic">
+    </span>
+</div>
+</body>
+</html>

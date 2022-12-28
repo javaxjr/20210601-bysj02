@@ -7,4 +7,6 @@ public interface AdminService {
     int addAdmin(Admin admin);
 
     PageInfo<Admin> listByName(String name, Integer pageNum, Integer pageSize);
+
+    Admin findById(String id);
 }

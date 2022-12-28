@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<request>
+    <sysHeader>
+        <sysHeaderCode type="varchar" length="256">sysHeaderCode123456</sysHeaderCode>
+    </sysHeader>
+    <bizHeader>
+        <bizHeaberCode type="varchar" length="256">bizHeaberCode789123</bizHeaberCode>
+    </bizHeader>
+    <reqBody>
+        <id type="varchar" length="256">672433b7-cb94-40ba-98a6-a048f0124282</id>
+        <name type="varchar" length="544">医用外科口罩独立包装成人一次一片</name>
+        <price type="varchar" length="10">100.5</price>
+        <photopath type="varchar" length="125">upload/10f83910product-img22.JPG</photopath>
+        <briefly type="varchar" length="200">厂家批发新料一次性加厚朔料袋</briefly>
+    </reqBody>
+</request>

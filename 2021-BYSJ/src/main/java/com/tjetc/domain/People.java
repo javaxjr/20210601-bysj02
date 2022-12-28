@@ -1,8 +1,9 @@
 package com.tjetc.domain;
 
+
 /*
-*people： 人  用户和管理员的父类  有着父类的属性
-* */
+ *people： 人  用户和管理员的父类  有着父类的属性
+ * */
 public class People {
     private Integer id;
     private String name;//管理员姓名
@@ -12,6 +13,7 @@ public class People {
     private Integer age;//年龄
     private String sex;//性别
     private String phone;//联系方式
+
 
     public People() {
     }

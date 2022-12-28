@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一棵简单的ztree</title>
+    <link rel="stylesheet" type="text/css" href="../zTree_v3-master/css/zTreeStyle/zTreeStyle.css"/>
+    <script type="text/javascript" src="../zTree_v3-master/js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="../zTree_v3-master/js/jquery.ztree.core.js"></script>
+    <script type="text/javascript">
+        /**
+         * 声明一个ztree对象,主要包括三个方面：
+         * 1.ztree参数配置
+         * 2.ztree方法
+         * 3.treeNode节点数据
+         */
+        var ztree;
+        //ztree参数配置
+        var setting = {
+            view: {//视图参数配置
+                dblClickExpand: false,//取消双击展开样式
+                showLine: true,//显示树节点之间的连接线
+                selectedMulti: false//取消多选
+            },
+            data: {//数据参数配置
+                simpleData: {
+                    enable: true, //简单数据格式
+                    idKey: "id",//当前节点数据的键
+                    pIdKey: "pId",//父节点的键
+                    rootPId: ""//根节点的键
+                }
+            },
+            callback: {//回调函数配置
+                beforeClick: function (treeId, treeNode) {//单击前，传入树的id，以及树节点
+                    var zTree = $.fn.zTree.getZTreeObj("tree");//获取树对象
+                    if (treeNode.isParent) {//如果单击的树节点是一个父节点
+                        zTree.expandNode(treeNode);//就展开该父节点
+                        return false;
+                    } else {
+                        return true;
+                    }
+                }
+            }
+        };
+        //treeNode节点数据
+        var ztreeNodes = [
+            {id: 1, pId: 0, name: "动物", open: true},
+            {id: 11, pId: 1, name: "无脊椎动物"},
+            {id: 101, pId: 11, name: "原生动物"},
+            {id: 10101, pId: 101, name: "草履虫"},
+            {id: 10102, pId: 101, name: "变形虫"},
+            {id: 102, pId: 11, name: "腔肠动物"},
+            {id: 10201, pId: 102, name: "水螅"},
+            {id: 10202, pId: 102, name: "海蜇"},
+            {id: 103, pId: 11, name: "扁形动物"},
+            {id: 10301, pId: 103, name: "涡虫"},
+            {id: 10302, pId: 103, name: "血吸虫"},
+            {id: 104, pId: 11, name: "线形动物"},
+            {id: 10401, pId: 104, name: "蛔虫"},
+            {id: 10402, pId: 104, name: "线虫"},
+            {id: 105, pId: 11, name: "环节动物"},
+            {id: 10501, pId: 105, name: "蚯蚓"},
+            {id: 10502, pId: 105, name: "沙蚕"},
+            {id: 106, pId: 11, name: "软体动物"},
+            {id: 10601, pId: 106, name: "河蚌"},
+            {id: 10602, pId: 106, name: "章鱼"},
+            {id: 107, pId: 11, name: "节肢动物"},
+            {id: 10701, pId: 107, name: "昆虫"},
+            {id: 10702, pId: 107, name: "虾蟹"},
+            {id: 10703, pId: 107, name: "蜘蛛"},
+            {id: 10704, pId: 107, name: "蜈蚣"},
+            {id: 108, pId: 11, name: "棘皮动物"},
+            {id: 10801, pId: 108, name: "海胆"},
+            {id: 10802, pId: 108, name: "海星"},
+            {id: 10803, pId: 108, name: "海参"},
+            {id: 12, pId: 1, name: "脊椎动物"},
+            {id: 201, pId: 12, name: "鱼纲"},
+            {id: 20101, pId: 201, name: "软骨鱼纲"},
+            {id: 20101001, pId: 20101, name: "鲨鱼"},
+            {id: 20101002, pId: 20101, name: "孔鳐"},
+            {id: 20102, pId: 201, name: "硬骨鱼纲"},
+            {id: 20102001, pId: 20102, name: "中华青鳞鱼"},
+            {id: 20102002, pId: 20102, name: "鲤鱼"},
+            {id: 202, pId: 12, name: "两栖纲"},
+            {id: 202001, pId: 202, name: "蚓螈"},
+            {id: 202002, pId: 202, name: "大鲵"},
+            {id: 202003, pId: 202, name: "蛙"},
+            {id: 202004, pId: 202, name: "蟾蜍"},
+            {id: 203, pId: 12, name: "爬行纲"},
+            {id: 203001, pId: 203, name: "蜥蜴"},
+            {id: 203002, pId: 203, name: "蛇"},
+            {id: 203003, pId: 203, name: "龟鳖"},
+            {id: 203004, pId: 203, name: "鳄鱼"},
+            {id: 204, pId: 12, name: "鸟纲"},
+            {id: 204001, pId: 204, name: "鹦鹉"},
+            {id: 204002, pId: 204, name: "鸭雁"},
+            {id: 204003, pId: 204, name: "企鹅"},
+            {id: 204004, pId: 204, name: "鹰"},
+            {id: 204005, pId: 204, name: "雀"},
+            {id: 205, pId: 12, name: "哺乳纲"},
+            {id: 205001, pId: 205, name: "鸭嘴兽"},
+            {id: 205002, pId: 205, name: "熊虎狮"},
+            {id: 205003, pId: 205, name: "猴猩"},
+            {id: 205004, pId: 205, name: "马"},
+            {id: 205005, pId: 205, name: "羊"},
+            {id: 205006, pId: 205, name: "骆驼"},
+            {id: 2, pId: 0, name: "植物", open: true},
+            {id: 21, pId: 2, name: "绿藻"},
+            {id: 22, pId: 2, name: "苔藓"},
+            {id: 23, pId: 2, name: "蕨类植物"},
+            {id: 24, pId: 2, name: "种子植物"},
+            {id: 24001, pId: 24, name: "银杏"},
+            {id: 24002, pId: 24, name: "喇叭花"},
+            {id: 24003, pId: 24, name: "苹果梨桃杏树"}
+        ];
+        //DOM文档加载完毕即执行
+        $(document).ready(function () {
+            var t = $("#tree");
+            /**
+             * zTree 初始化方法：$.fn.zTree.init(t, setting, ztreeNodes)
+             * t:用于展现 zTree 的 DOM 容器
+             * setting:zTree 的配置参数
+             * zNodes:zTree 的节点数据
+             * 即可生成一棵ztree
+             */
+            t = $.fn.zTree.init(t, setting, ztreeNodes);
+        });
+    </script>
+</head>
+<body>
+<ul id="tree" class="ztree" style="width:260px; overflow:auto;"></ul>
+</body>
+</html>

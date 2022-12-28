@@ -24,6 +24,13 @@
             <artifactId>spring-orm</artifactId>
             <version>5.2.9.RELEASE</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>5.3.10</version>
+        </dependency>
+
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
@@ -106,6 +113,8 @@
             <artifactId>commons-fileupload</artifactId>
             <version>1.4</version>
         </dependency>
+
+
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -159,11 +168,6 @@
             <artifactId>tomcat-embed-websocket</artifactId>
             <version>9.0.39</version>
         </dependency>
-        <!--<dependency>
-            <groupId>net.sf.json-lib</groupId>
-            <artifactId>json-lib</artifactId>
-            <version>2.4</version>
-        </dependency>-->
 
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -199,7 +203,6 @@
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
             <version>2.4.0</version>
         </dependency>
-
 
         <!--
 Javassist是一个开源的分析、编辑和创建Java字节码的类库。它允许开发者自由的在一个已经编译好的类中添加新的方法，或者是修改已有的方法。
@@ -239,6 +242,24 @@ Javassist是一个开源的分析、编辑和创建Java字节码的类库。它�
             <artifactId>hadoop-hdfs-client</artifactId>
             <version>3.3.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>2.3.5.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.23</version>
+        </dependency>
+
 
 
     </dependencies>
@@ -258,11 +279,14 @@ Javassist是一个开源的分析、编辑和创建Java字节码的类库。它�
             <resource>
                 <directory>src/main/resources</directory>
                 <includes>
-                    <include>**/*.properties</include>
                     <include>**/*.xml</include>
+                    <include>**/*.yml</include>
+                    <include>**/*.properties</include>
                 </includes>
                 <filtering>false</filtering>
             </resource>
+
+
         </resources>
         <plugins>
             <plugin>
@@ -279,14 +303,14 @@ Javassist是一个开源的分析、编辑和创建Java字节码的类库。它�
             导致又扫描不到src/main/resources下的xml文件
             添加了如下东西
             -->
-            <!--<plugin>
+            <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.5.1</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
-            </plugin>-->
+            </plugin>
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
@@ -305,7 +329,8 @@ Javassist是一个开源的分析、编辑和创建Java字节码的类库。它�
                         </goals>
                         <configuration>
                             <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                             </transformers>
                         </configuration>
                     </execution>
@@ -314,11 +339,8 @@ Javassist是一个开源的分析、编辑和创建Java字节码的类库。它�
             </plugin>
 
 
-
-
         </plugins>
     </build>
-
 
 
 </project>

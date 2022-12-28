@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<request id="fix">
+    <sysHeaderCode dataid="sysHeaderCode" type="varchar" length="256"/>
+    <bizHeaberCode dataid="bizHeaberCode" type="varchar" length="256"/>
+    <id dataid="id" type="varchar" length="256"/>
+    <name dataid="name" type="varchar" length="544"/>
+    <price dataid="price" type="varchar" length="10"/>
+    <photopath dataid="photopath" type="varchar" length="125"/>
+    <briefly dataid="briefly" type="varchar" length="200"/>
+</request>

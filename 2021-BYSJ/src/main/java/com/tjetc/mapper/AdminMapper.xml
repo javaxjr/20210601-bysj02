@@ -10,4 +10,8 @@
         select * from admin where name like concat('%',#{name},'%')
     </select>
 
+    <select id="findById" parameterType="String" resultType="admin">
+        select * from admin where id=#{id}
+    </select>
+
 </mapper>

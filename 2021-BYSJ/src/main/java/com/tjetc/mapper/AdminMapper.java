@@ -8,4 +8,6 @@ public interface AdminMapper {
     int addAdmin(Admin admin);
 
     List<Admin> listByName(String name);
+
+    Admin findById(String id);
 }

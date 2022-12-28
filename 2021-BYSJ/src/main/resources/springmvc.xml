@@ -9,6 +9,11 @@
        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
 ">
     <context:component-scan base-package="com.tjetc.controller"></context:component-scan>
+    <context:component-scan base-package="com.tjetc.redisConnecation"></context:component-scan>
+
+    <!-- 扫描所有properties文件 -->
+    <context:property-placeholder ignore-unresolvable="true" location="classpath:*.properties"/>
+    <context:property-placeholder ignore-unresolvable="true" location="classpath:*.yml"/>
 
     <mvc:annotation-driven></mvc:annotation-driven>
     <mvc:default-servlet-handler></mvc:default-servlet-handler>

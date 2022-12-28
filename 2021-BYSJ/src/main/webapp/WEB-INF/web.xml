@@ -11,6 +11,15 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+
+   <!-- <listener>
+        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
+    &lt;!&ndash;session：该针对每一次HTTP请求都会产生一个新的bean，同时该bean仅在当前HTTP session内有效。也要在web.xml配置如下代码：&ndash;&gt;
+    <listener>
+        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>-->
+
     <filter>
         <filter-name>EncodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -75,4 +84,8 @@
         <servlet-name>PhoneLoginServlet</servlet-name>
         <url-pattern>/PhoneLoginServlet</url-pattern>
     </servlet-mapping>
+
+
+
+
 </web-app>

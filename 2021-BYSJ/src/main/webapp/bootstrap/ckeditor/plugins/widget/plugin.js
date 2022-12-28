@@ -516,7 +516,7 @@
 		 * @param {CKEDITOR.dom.element} element The future widget element.
 		 * @param {String/CKEDITOR.plugins.widget.definition} [widgetDef] Name of a widget or a widget definition.
 		 * The widget definition should be previously registered by using the
-		 * {@link CKEDITOR.plugins.widget.repository#add} method.
+		 * {@link add} method.
 		 * @param [startupData] Widget startup data (has precedence over default one).
 		 * @returns {CKEDITOR.plugins.widget} The widget instance or `null` if a widget could not be initialized on
 		 * a given element.
@@ -803,7 +803,7 @@
 	 * A repository instance is automatically set up by the Widget plugin and is accessible under
 	 * {@link CKEDITOR.editor#widgets}, while widget instances are created and destroyed by the repository.
 	 *
-	 * To create a widget, first you need to {@link CKEDITOR.plugins.widget.repository#add register} its
+	 * To create a widget, first you need to {@link add register} its
 	 * {@link CKEDITOR.plugins.widget.definition definition}:
 	 *
 	 *		editor.widgets.add( 'simplebox', {
@@ -4418,7 +4418,7 @@
 } )();
 
 /**
- * An event fired when a widget definition is registered by the {@link CKEDITOR.plugins.widget.repository#add} method.
+ * An event fired when a widget definition is registered by the {@link add} method.
  * It is possible to modify the definition being registered.
  *
  * @event widgetDefinition
@@ -4428,7 +4428,7 @@
 
 /**
  * This is an abstract class that describes the definition of a widget.
- * It is a type of {@link CKEDITOR.plugins.widget.repository#add} method's second argument.
+ * It is a type of {@link add} method's second argument.
  *
  * Widget instances inherit from registered widget definitions, although not in a prototypal way.
  * They are simply extended with corresponding widget definitions. Note that not all properties of
@@ -4442,7 +4442,7 @@
 
 /**
  * Widget definition name. It is automatically set when the definition is
- * {@link CKEDITOR.plugins.widget.repository#add registered}.
+ * {@link add registered}.
  *
  * @property {String} name
  */
